@@ -13,3 +13,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+*.komodoproject
+/.idea
+
+# Ignore images files
+public/system/dragonfly
+
+tags
+.tern-port
