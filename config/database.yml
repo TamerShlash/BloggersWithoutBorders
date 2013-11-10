@@ -20,8 +20,10 @@ test:
 
 production:
   adapter: postgresql
+  host: ec2-54-204-27-119.compute-1.amazonaws.com
+  port: 5432
   encoding: unicode
-  database: bloggerswithoutborders
+  database: d58fufppq5quk0
   pool: 5
-  username:
-  password:
+  username: ftbfkjzqtrxkir
+  password: eRSt9EHkueFzMi1z70O7VYjqIn
