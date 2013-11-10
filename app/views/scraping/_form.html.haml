@@ -1,0 +1,7 @@
+.row
+  .col-lg-6
+    = form_tag('/parse', :method => :post, :class => 'form-search' ) do
+      .input-group
+        %input.form-control{type: "text", :name => 'url'}
+        %span.input-group-btn
+          %button.btn.btn-default{type: "button", :id => "parse-btn", :class => "btn"} Parse!

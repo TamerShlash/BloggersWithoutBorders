@@ -1,0 +1,9 @@
+- @images.each do |image|
+  = image_tag image
+- @tags.each do |tag|
+  %p= tag
+%br
+%br
+%br
+%p= "Parse a new blog post!"
+= render 'form'
