@@ -1,6 +1,7 @@
 BloggersWithoutBorders::Application.routes.draw do
 
   root to: 'scraping#show'
+  get '/parse' => 'scraping#show'
   post '/parse' => 'scraping#parse'
   get '/about' => 'pages#about'
   get '/contact' => 'pages#contact'
