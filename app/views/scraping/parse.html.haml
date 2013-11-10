@@ -1,9 +1,18 @@
-- @images.each do |image|
-  = image_tag image
-- @tags.each do |tag|
-  %p= tag
+.row
+  - @images.each do |image|
+    .col-sm-2.col-md-2
+      .thumbnail
+        %img{alt: image, "data-src" => image, src: image}
+        .caption
+          %p
+            %a.btn-sm.btn-primary{href: "#", role: "button"} Zoom
+            %a.btn-sm.btn-primary{href: "#", role: "button"} Download
+%p= @tags.join(' ')
+-#- @tags.each do |tag|
+-#  %p= tag
 %br
 %br
 %br
-%p= "Parse a new blog post!"
-= render 'form'
+.well
+  %h4= "Parse a new blog post!"
+  = render 'form'
