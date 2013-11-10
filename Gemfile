@@ -25,6 +25,13 @@ gem "nokogiri", "~> 1.6.0"
 gem "haml"
 gem "haml-rails"
 
+group :development do
+  gem 'meta_request'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rails-footnotes', '>= 3.7.9'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
