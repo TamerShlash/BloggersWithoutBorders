@@ -15,6 +15,7 @@
 /tmp
 *.komodoproject
 /.idea
+/.idea/*
 
 # Ignore images files
 public/system/dragonfly
