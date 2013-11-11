@@ -5,7 +5,7 @@
   %meta{content: "A simple tool to help create promotional snippets for a blog post.", name: "description"}/
   %meta{content: "Tamer Shlash", name: "author"}/
   %link{href: "../../docs-assets/ico/favicon.png", rel: "shortcut icon"}/
-  %title BloggersWithoutBorders
+  %title= @title.nil? ? "BloggersWithoutBorders" : @title + " | BloggersWithoutBorders"
   = stylesheet_link_tag    "application", media: "all"
   = csrf_meta_tags
   %script{src: "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
