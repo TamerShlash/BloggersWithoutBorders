@@ -33,7 +33,8 @@ class ScrapingController < ApplicationController
     html.css('*[rel~=tag]').each { |tag| tags.append '#' + tag.inner_text.downcase.gsub(/[^[:alnum:]]/,' ').strip.gsub(/\s/,'_').gsub(/_{2,}/,'_') }
     @results[:tags] = tags.uniq.sort
 
-    @title = "Analysis for: \"" + html.css('title').inner_text + "\""
+    @results[:title] = html.css('title').inner_text
+    @title = "Analysis for: \"" + @results[:title] + "\""
     @results[:url] = post_url.to_s
 
   rescue Exception => e
