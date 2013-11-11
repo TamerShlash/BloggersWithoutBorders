@@ -23,6 +23,6 @@ class ScrapingController < ApplicationController
 
     @tags = []
     html.css('*[rel~=tag]').each { |tag| @tags.append '#' + tag.inner_text.downcase.gsub(/[^[:alnum:]]/,' ').strip.gsub(/\s/,'_').gsub(/_{2,}/,'_') }
-    @tags.uniq!.sort!
+    @tags = @tags.uniq.sort
   end
 end
