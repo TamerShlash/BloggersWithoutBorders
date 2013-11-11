@@ -1,6 +1,6 @@
 %h4
   = "Analysis for blog post: "
-  %strong= link_to @title, @results[:url]
+  %strong= link_to @results[:title], @results[:url]
 .row
   - @results[:images].each do |image|
     .col-sm-2.col-md-2
@@ -8,8 +8,8 @@
         %img{alt: image, "data-src" => image, src: image}
         .caption
           %p
-            %a.btn-sm.btn-primary{href: "#", role: "button"} Zoom
-            %a.btn-sm.btn-primary{href: "#", role: "button"} Download
+            %a.btn-sm.btn-primary.zoom-image{href: "#", role: "button"} Zoom
+            %a.btn-sm.btn-primary{href: image, role: "button", download: '', target: '_blank'} Download
 %p{style: 'direction:rtl;float:left;'}= @results[:tags].join(' ')
 -#- @tags.each do |tag|
 -#  %p= tag
@@ -19,3 +19,15 @@
 .well
   %h4= "Parse a new blog post!"
   = render 'form'
+
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} &times;
+        %h4#myModalLabel.modal-title Modal title
+      .modal-body.text-center
+        = image_tag 'http://cdn.sstatic.net/stackoverflow/img/favicon.ico', id: 'zoomed-image'
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %a.btn.btn-primary#modal-download-button{type: "button", download: '', target: '_blank'} Download
