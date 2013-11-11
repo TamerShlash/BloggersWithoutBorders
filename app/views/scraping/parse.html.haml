@@ -1,5 +1,8 @@
+%h4
+  = "Analysis for blog post: "
+  %strong= link_to @title, @results[:url]
 .row
-  - @images.each do |image|
+  - @results[:images].each do |image|
     .col-sm-2.col-md-2
       .thumbnail
         %img{alt: image, "data-src" => image, src: image}
@@ -7,7 +10,7 @@
           %p
             %a.btn-sm.btn-primary{href: "#", role: "button"} Zoom
             %a.btn-sm.btn-primary{href: "#", role: "button"} Download
-%p{style: 'direction:rtl;float:left;'}= @tags.join(' ')
+%p{style: 'direction:rtl;float:left;'}= @results[:tags].join(' ')
 -#- @tags.each do |tag|
 -#  %p= tag
 %br
